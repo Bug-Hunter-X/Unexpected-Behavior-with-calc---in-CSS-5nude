@@ -1,0 +1,23 @@
+To fix this issue, make sure that the parent element has a specified width. For example:
+
+```css
+.parent {
+  width: 1000px; /* Or any other fixed or percentage width */
+}
+
+div {
+  width: calc(50% - 10px);
+  margin: 0 auto;
+}
+```
+
+Alternatively, you can use viewport units (vw) instead of percentages.  This approach avoids the calculation entirely, and usually provides more consistent results:
+
+```css
+div {
+  width: calc(50vw - 10px);
+  margin: 0 auto;
+}
+```
+
+In summary, always test your CSS across different browsers and consider the context (parent element width, etc.) when using the `calc()` function.
